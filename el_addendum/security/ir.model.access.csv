@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ago_addendum_group_erp_manager,res_company access_ago_addendum_group_erp_manager,model_ago_addendum,base.group_user,1,1,1,1
+access_ago_addendum_group_user,access_ago_addendum_group_user,model_ago_addendum,base.group_user,1,0,0,0
+

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="ago_addendum_view_form" model="ir.ui.view">
+        <field name="name">ago.addendum.view.form</field>
+        <field name="model">ago.addendum</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-check">
+                            <field name="active" widget="boolean_button" options='{"terminology": "active"}'/>
+                        </button>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="fname_addendum" invisible="1"/>
+                            <field name="model" invisible="1"/>
+                            <field name="sequence" invisible="1"/>
+                            <field name="name"/>
+                            <field name="position"/>
+                            <field name="addendum" filename="fname_addendum"/>
+                        </group>
+                        <group>
+                            <field name="ir_act_report_id"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="condition"/>
+                        </group>
+                    </group>
+                    <button name="open_generate_filter_domain_wizard" type="object" string="Generate Domain" attrs="{'invisible': ['|', ('condition', 'not in', ['domain', 'advanced_domain']), ('model', '=', False)]}"/>
+                    <field name="filter_domain" widget="domain" options="{'use_field_as_model': 'model'}" attrs="{'invisible': ['|', ('condition', 'not in', ['domain', 'advanced_domain']), ('model', '=', False)]}" readonly="True"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="ago_addendum_view_tree" model="ir.ui.view">
+        <field name="name">ago.addendum.view.tree</field>
+        <field name="model">ago.addendum</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="ir_act_report_id"/>
+                <field name="condition"/>
+                <field name="position"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="ago_addendum_view_search" model="ir.ui.view">
+        <field name="name">ago.addendum.view.search</field>
+        <field name="model">ago.addendum</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="ir_act_report_id"/>
+                <filter name="filter_position_top" domain="[('position','=', 'top')]" string="Position Top"/>
+                <filter name="filter_position_bottom" domain="[('position','=', 'bottom')]" string="Position Bottom"/>
+                <filter name="filter_active" domain="[('active','=', False)]" string="Deactivate"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_ir_act_report_id" string="Report" domain="[]" context="{'group_by':'ir_act_report_id'}"/>
+                    <filter name="group_condition" string="Condition" domain="[]" context="{'group_by':'condition'}"/>
+                    <filter name="group_position" string="Position" domain="[]" context="{'group_by':'position'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_ago_addendum" model="ir.actions.act_window">
+        <field name="name">Addendums</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ago.addendum</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_ago_addendum"
+              name="Addendums"
+              action="action_ago_addendum"
+              sequence="990"
+              />
+
+</odoo>
