@@ -1,0 +1,248 @@
+<?xml version="1.0"?>
+<odoo>
+    <template id="report_invoice_document" inherit_id="account.report_invoice_document">
+        <xpath expr="//div[hasclass('page')]/h2" position="attributes">
+            <attribute name="class">text-center</attribute>
+        </xpath>
+        <xpath expr="//t[@t-set='address']" position="replace">
+            <div class="row"><p></p></div>
+            &#x2063;
+            <div class="row">
+                Imp.
+                <span t-field="o.imp_site"/>
+            </div>
+            <div class="col-10 text-right">
+                <p class="text-right">
+                    Brussels, <span t-esc="datetime.datetime.now().strftime('%d/%m/%y')"/>
+                </p>
+            </div>
+        </xpath>
+        <xpath expr="//div[@id='informations']" position="replace">
+            <div class="border-black">
+                Concerned : <span t-field="o.construction_site_concerned"/>
+            </div>
+        </xpath>
+        <xpath expr="//p[@name='payment_term']" position="replace">
+            <p> Amount payable no later on <span t-field="o.invoice_date_due"/> on the account <span
+                    t-field="o.account_number"/></p>
+        </xpath>
+        <xpath expr="//p[@name='comment']" position="replace">
+             <span t-field="o.auto_liquidation"/>
+        </xpath>
+        <xpath expr="//table[@name='invoice_line_table']" position="replace">
+            <div style="border-top: 1px solid black;">
+                <p>The company in advance having its head office <span t-field="o.company_id.street"/> in <span
+                        t-field="o.company_id.zip"/> <span t-field="o.company_id.city"/> declare that <span
+                        t-field="o.partner_id.name"/>
+                    addressed to <span t-field="o.partner_id.street"/> owes him :
+                </p>
+                <p><span t-field="o.introductory_sentence"/></p>
+                <div class="row" t-if="o.cumulative_amount">
+                    <div class="col-8"><h6>Cumulative amount</h6></div>
+                    <div class="col-2" style="text-align: right;">
+                        <span>
+                            <t t-esc="abs(o.cumulative_amount)"
+                            t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                        </span>
+                    </div>
+                    <t t-if="o.cumulative_amount &lt; 0">
+                        <div class="col-2" style="text-align: left;">
+                            <h6>(-)</h6>
+                        </div>
+                    </t>
+                </div>
+                <div class="row" t-if="o.previous_amount">
+                    <div class="col-8"><h6>Previous amount</h6></div>
+                    <div class="col-2" style="text-align: right;">
+                        <span>
+                            <t t-esc="abs(o.previous_amount)"
+                               t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                        </span>
+                    </div>
+                    <t t-if="o.previous_amount &lt; 0">
+                        <div class="col-2" style="text-align: left;">
+                            <h6>(-)</h6>
+                        </div>
+                    </t>
+                </div>
+                <div class="row"><p></p></div>
+                <div class="row" t-if="o.cumulative_statement">
+                    <div class="col-8"><h6>Cumulative statement</h6></div>
+                    <div class="col-2" style="text-align: right;">
+                        <span>
+                            <t t-esc="abs(o.cumulative_statement)"
+                               t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                        </span>
+                    </div>
+                    <t t-if="o.cumulative_statement &lt; 0">
+                        <div class="col-2" style="text-align: left;">
+                            <h6>(-)</h6>
+                        </div>
+                    </t>
+                </div>
+                <div class="row" t-if="o.previous_statement">
+                    <div class="col-8"><h6>Previous statement</h6></div>
+                    <div class="col-2" style="text-align: right;">
+                        <span>
+                            <t t-esc="abs(o.previous_statement)"
+                               t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                        </span>
+                    </div>
+                    <t t-if="o.previous_statement &lt; 0">
+                        <div class="col-2" style="text-align: left;">
+                            <h6>(-)</h6>
+                        </div>
+                    </t>
+                </div>
+                <div class="row"><p></p></div>
+                <div class="row" t-if="o.monthly_progress">
+                    <div class="col-8"><h6>Monthly progress</h6></div>
+                    <div class="col-2" style="text-align: right;">
+                        <span>
+                            <t t-esc="abs(o.monthly_progress)"
+                               t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                        </span>
+                    </div>
+                    <t t-if="o.monthly_progress &lt; 0">
+                        <div class="col-2" style="text-align: left;">
+                            <h6>(-)</h6>
+                        </div>
+                    </t>
+                </div>
+                <div class="row"><p></p></div>
+                <div class="row" t-if="o.cumulative_deduction_deposit">
+                    <div class="col-8"><h6>Cumulative deduction of the deposit</h6></div>
+                    <div class="col-2" style="text-align: right;">
+                        <span>
+                            <t t-esc="abs(o.cumulative_deduction_deposit)"
+                               t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                        </span>
+                    </div>
+                    <t t-if="o.cumulative_deduction_deposit &lt; 0">
+                        <div class="col-2" style="text-align: left;">
+                            <h6>(-)</h6>
+                        </div>
+                    </t>
+                </div>
+                <div class="row" t-if="o.previous_deduction_deposit">
+                    <div class="col-8"><h6>Previous deduction from the deposit</h6></div>
+                    <div class="col-2" style="text-align: right;">
+                        <span>
+                            <t t-esc="abs(o.previous_deduction_deposit)"
+                               t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                        </span>
+                    </div>
+                    <t t-if="o.previous_deduction_deposit &lt; 0">
+                        <div class="col-2" style="text-align: left;">
+                            <h6>(-)</h6>
+                        </div>
+                    </t>
+                </div>
+                <div class="row"><p></p></div>
+                <div class="row" t-if="o.net_amount">
+                    <div class="col-8"><h6>Net amount</h6></div>
+                    <div class="col-2" style="text-align: right;">
+                        <span>
+                            <t t-esc="abs(o.net_amount)"
+                               t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                        </span>
+                    </div>
+                    <t t-if="o.net_amount &lt; 0">
+                        <div class="col-2" style="text-align: left;">
+                            <h6>(-)</h6>
+                        </div>
+                    </t>
+                </div>
+                <div class="row" t-if="o.revision">
+                    <div class="col-8"><h6>Revision</h6></div>
+                    <div class="col-2" style="text-align: right;">
+                        <span>
+                            <t t-esc="abs(o.revision)"
+                               t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+
+                        </span>
+                    </div>
+                    <t t-if="o.revision &lt; 0">
+                        <div class="col-2" style="text-align: left;">
+                            <h6>(-)</h6>
+                        </div>
+                    </t>
+                </div>
+                <div class="row"><p></p></div>
+                <div class="row" t-if="o.revision_amount_included">
+                    <div class="col-8"><h6>Revision amount included</h6></div>
+                    <div class="col-2" style="text-align: right;">
+                        <span>
+                            <t t-esc="abs(o.revision_amount_included)"
+                               t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                        </span>
+                    </div>
+                    <t t-if="o.revision_amount_included &lt; 0">
+                        <div class="col-2" style="text-align: left;">
+                            <h6>(-)</h6>
+                        </div>
+                    </t>
+                </div>
+                &#x2063;
+            </div>
+            <t t-set="current_subtotal" t-value="0"/>
+            <t t-set="lines"
+               t-value="o.invoice_line_ids.sorted(key=lambda l: (-l.sequence, l.date, l.move_name, -l.id), reverse=True)"/>
+            <t t-foreach="lines" t-as="line">
+                <t t-set="current_subtotal" t-value="current_subtotal + line.price_total"></t>
+                <div class="row">
+                    <t t-set="line_tva" t-value="line.price_total - line.price_subtotal"></t>
+                    <t t-if="line_tva > 0">
+                        <div class="col-8">
+                            <span t-field="line.name"></span>
+                            <span t-esc="', '.join(map(lambda x: (x.description), ''))"
+                                  id="line_tax_ids"/>
+                            sur
+                            <span class="text-nowrap" t-field="line.price_subtotal"></span>
+                        </div>
+                        <div class="col-2" style="text-align: right;">
+                            <span t-esc="line_tva"
+                                  t-options='{"widget": "monetary", "display_currency": o.currency_id}'></span>
+                        </div>
+                    </t>
+                </div>
+            </t>
+            <div class="row"><p></p></div>
+            <div class="row">
+                <div class="col-8">Amount to be paid</div>
+                <div class="col-2" style="text-align: right;"><span t-esc="current_subtotal"
+                                                                    t-options='{"widget": "monetary", "display_currency": o.currency_id}'></span></div>
+
+            </div>
+            <div class="row"><p></p></div>
+            <div class="row">
+                <div class="col-8">
+                    Certified sincere to the sum
+                    <span t-esc="o.in_amount_to_text(current_subtotal).lower()"/>
+                </div>
+            </div>
+            <div class="row"><p></p></div>
+        </xpath>
+        <xpath expr="//div[@id='total']" position="replace">
+            <div class="row"><p></p></div>
+        </xpath>
+    </template>
+    <record id="report_invoice_document" model="ir.ui.view">
+        <field name="priority">100</field>
+    </record>
+    <record id="account.account_invoices" model="ir.actions.report">
+        <field name="name">Invoices</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">account.report_invoice_with_payments</field>
+        <field name="report_file">account.report_invoice_with_payments</field>
+        <field name="print_report_name">(object._get_report_base_filename())</field>
+        <field name="attachment">(object.state == 'posted') and ((object.name or 'INV').replace('/','_')+'.pdf')</field>
+        <field name="binding_model_id" ref="model_account_move"/>
+        <field name="binding_type">report</field>
+        <field name="groups_id" eval="[(4, ref('account.group_account_invoice')),
+ (4, ref('account.group_account_readonly'))]"/>
+        <field name="paperformat_id" ref="in_advance_invoice.paperformat_a4_custom_inadvance"></field>
+    </record>
+
+</odoo>

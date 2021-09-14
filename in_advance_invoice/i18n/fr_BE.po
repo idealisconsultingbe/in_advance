@@ -1,0 +1,386 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* in_advance_invoice
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-22 09:28+0000\n"
+"PO-Revision-Date: 2021-07-22 11:29+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr\n"
+"X-Generator: Poedit 3.0\n"
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.report_invoice_document
+msgid "\" In self-liquidation AR n 1, art 20 \""
+msgstr "en auto liquidation AR n°1, art 20"
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.external_layout_in_advance
+msgid "<b>Algemene bouwonderneming</b>"
+msgstr "Algemene bouwonderneming"
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.external_layout_in_advance
+msgid "<b>General building company</b>"
+msgstr "Entreprise générale de bâtiment"
+
+#. module: in_advance_invoice
+#: model:ir.model.fields,field_description:in_advance_invoice.field_approval_request__account_move_id
+msgid "Account move"
+msgstr ""
+
+#. module: in_advance_invoice
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_move__account_number
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_payment__account_number
+msgid "Account number"
+msgstr "Numéro de compte"
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.external_layout_in_advance
+msgid "Agréation 25.112 Erkenning"
+msgstr "Agréation 25.112 ErKenning"
+
+#. module: in_advance_invoice
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_bank_statement_line__amount_deposit_deducted
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_move__amount_deposit_deducted
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_payment__amount_deposit_deducted
+msgid "Amount of the deposit deducted"
+msgstr "Montant de l'acompte déduit"
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.report_invoice_document
+msgid "Amount payable no later on"
+msgstr "Montant payable au plus tard le"
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.report_invoice_document
+msgid "Amount to be paid"
+msgstr "Montant à payer"
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.account_move_in_advance_form_view
+msgid "Amounts"
+msgstr "Montants"
+
+#. module: in_advance_invoice
+#: model:approval.category,name:in_advance_invoice.approval_category_approve_invoice
+msgid "Approbation facture"
+msgstr ""
+
+#. module: in_advance_invoice
+#: model:ir.model,name:in_advance_invoice.model_approval_request
+msgid "Approval Request"
+msgstr "Demande de validation"
+
+#. module: in_advance_invoice
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_bank_statement_line__approval_request_id
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_move__approval_request_id
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_payment__approval_request_id
+msgid "Approval request"
+msgstr "Demande de validation"
+
+#. module: in_advance_invoice
+#: model:ir.model.fields.selection,name:in_advance_invoice.selection__account_move__state__approved
+msgid "Approved"
+msgstr "Approuvé"
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.external_layout_in_advance
+msgid "BELFIUS BE90 5523 3104 0032"
+msgstr ""
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.external_layout_in_advance
+msgid "BIC KREDBEBB"
+msgstr ""
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.external_layout_in_advance
+msgid "BNP PARIBAS BE04 2100 0789 3731"
+msgstr ""
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.report_invoice_document
+msgid "Brussels,"
+msgstr "Bruxelles, le"
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.report_invoice_document
+msgid "Certified sincere to the sum"
+msgstr "Certifiée sincère et véritable à la somme de "
+
+#. module: in_advance_invoice
+#: model:ir.model,name:in_advance_invoice.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.report_invoice_document
+msgid "Concerned :"
+msgstr "Concerne:"
+
+#. module: in_advance_invoice
+#: model:ir.model,name:in_advance_invoice.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: in_advance_invoice
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_bank_statement_line__cumulative_amount
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_move__cumulative_amount
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_payment__cumulative_amount
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.report_invoice_document
+msgid "Cumulative amount"
+msgstr "Montant cumulé"
+
+#. module: in_advance_invoice
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_bank_statement_line__cumulative_deduction_deposit
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_move__cumulative_deduction_deposit
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_payment__cumulative_deduction_deposit
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.report_invoice_document
+msgid "Cumulative deduction of the deposit"
+msgstr "Déduction cumulé de l'acompte"
+
+#. module: in_advance_invoice
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_bank_statement_line__cumulative_statement
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_move__cumulative_statement
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_payment__cumulative_statement
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.report_invoice_document
+msgid "Cumulative statement"
+msgstr "Décompte cumulé"
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.external_layout_in_advance
+msgid "Customer Accounting"
+msgstr "Comptabilité client"
+
+#. module: in_advance_invoice
+#: model:ir.model.fields,field_description:in_advance_invoice.field_res_partner__denomination
+#: model:ir.model.fields,field_description:in_advance_invoice.field_res_users__denomination
+msgid "Denomination"
+msgstr "Dénomination"
+
+#. module: in_advance_invoice
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_move__display_name
+#: model:ir.model.fields,field_description:in_advance_invoice.field_approval_request__display_name
+#: model:ir.model.fields,field_description:in_advance_invoice.field_res_company__display_name
+#: model:ir.model.fields,field_description:in_advance_invoice.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.external_layout_in_advance
+msgid "Enr. 03.11.12 Reg."
+msgstr ""
+
+#. module: in_advance_invoice
+#: model:ir.model.fields,field_description:in_advance_invoice.field_res_company__fax
+msgid "Fax"
+msgstr ""
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.external_layout_in_advance_header
+msgid "Fax:"
+msgstr ""
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.external_layout_in_advance
+msgid "GEBABEBB"
+msgstr ""
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.external_layout_in_advance
+msgid "GKCCBEBB"
+msgstr ""
+
+#. module: in_advance_invoice
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_move__id
+#: model:ir.model.fields,field_description:in_advance_invoice.field_approval_request__id
+#: model:ir.model.fields,field_description:in_advance_invoice.field_res_company__id
+#: model:ir.model.fields,field_description:in_advance_invoice.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: in_advance_invoice
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_bank_statement_line__imp_site
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_move__imp_site
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_payment__imp_site
+msgid "Imputation chantier"
+msgstr ""
+
+#. module: in_advance_invoice
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_bank_statement_line__introductory_sentence
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_move__introductory_sentence
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_payment__introductory_sentence
+msgid "Introductory sentence"
+msgstr "Phrase d'introduction"
+
+#. module: in_advance_invoice
+#: model:ir.model.fields,field_description:in_advance_invoice.field_res_partner__invoicing_mails
+#: model:ir.model.fields,field_description:in_advance_invoice.field_res_users__invoicing_mails
+msgid "Invoicing mails"
+msgstr "Mails de facturation"
+
+#. module: in_advance_invoice
+#: model:ir.model,name:in_advance_invoice.model_account_move
+msgid "Journal Entry"
+msgstr "Pièce comptable"
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.external_layout_in_advance
+msgid "K.B.C BE72 7360 2958 9916"
+msgstr ""
+
+#. module: in_advance_invoice
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_move____last_update
+#: model:ir.model.fields,field_description:in_advance_invoice.field_approval_request____last_update
+#: model:ir.model.fields,field_description:in_advance_invoice.field_res_company____last_update
+#: model:ir.model.fields,field_description:in_advance_invoice.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: in_advance_invoice
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_bank_statement_line__monthly_progress
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_move__monthly_progress
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_payment__monthly_progress
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.report_invoice_document
+msgid "Monthly progress"
+msgstr "Avancement du mois"
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.external_layout_in_advance
+msgid "N Entr. 0450.538.571"
+msgstr ""
+
+#. module: in_advance_invoice
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_bank_statement_line__net_amount
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_move__net_amount
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_payment__net_amount
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.report_invoice_document
+msgid "Net amount"
+msgstr "Montant net"
+
+#. module: in_advance_invoice
+#: model:ir.model.fields.selection,name:in_advance_invoice.selection__account_move__state__pending_approval
+msgid "Pending approval"
+msgstr "En attente de validation"
+
+#. module: in_advance_invoice
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_bank_statement_line__previous_amount
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_move__previous_amount
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_payment__previous_amount
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.report_invoice_document
+msgid "Previous amount"
+msgstr "Montant précédent"
+
+#. module: in_advance_invoice
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_bank_statement_line__previous_deduction_deposit
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_move__previous_deduction_deposit
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_payment__previous_deduction_deposit
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.report_invoice_document
+msgid "Previous deduction from the deposit"
+msgstr "Déduction précédente de l'acompte"
+
+#. module: in_advance_invoice
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_bank_statement_line__previous_statement
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_move__previous_statement
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_payment__previous_statement
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.report_invoice_document
+msgid "Previous statement"
+msgstr "Décompte précédent"
+
+#. module: in_advance_invoice
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_bank_statement_line__revision
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_move__revision
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_payment__revision
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.report_invoice_document
+msgid "Revision"
+msgstr "Révision"
+
+#. module: in_advance_invoice
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_bank_statement_line__revision_amount_included
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_move__revision_amount_included
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_payment__revision_amount_included
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.report_invoice_document
+msgid "Revision amount included"
+msgstr "Montant révision comprise"
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.external_layout_in_advance
+msgid "Sales condition on the back"
+msgstr "Conditions de vente verso"
+
+#. module: in_advance_invoice
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_bank_statement_line__construction_site_concerned
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_move__construction_site_concerned
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_payment__construction_site_concerned
+msgid "Site concerned"
+msgstr "Concerne"
+
+#. module: in_advance_invoice
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_move__state
+#: model:ir.model.fields,field_description:in_advance_invoice.field_account_payment__state
+msgid "Status"
+msgstr "Statut"
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.account_move_in_advance_form_view
+msgid "Submit for approval"
+msgstr "Soumettre pour approbation"
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.external_layout_in_advance_header
+msgid "Tax ID:"
+msgstr "TVA:"
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.external_layout_in_advance_header
+msgid "Tel:"
+msgstr ""
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.report_invoice_document
+msgid "The company in advance having its head office"
+msgstr "La société In Advance ayant son siège"
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.external_layout_in_advance
+msgid "Zie verkoopsvoorwaarden op keerzijde"
+msgstr ""
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.report_invoice_document
+msgid "addressed to"
+msgstr "sis adresse à"
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.report_invoice_document
+msgid "declare that"
+msgstr "déclare que"
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.report_invoice_document
+msgid "in"
+msgstr "à"
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.report_invoice_document
+msgid "on the account"
+msgstr "sur le compte n°"
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.report_invoice_document
+msgid "owes him :"
+msgstr "lui doit:"
+
+#. module: in_advance_invoice
+#: model_terms:ir.ui.view,arch_db:in_advance_invoice.report_invoice_document
+msgid "sur"
+msgstr ""

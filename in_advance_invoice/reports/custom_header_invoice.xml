@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="external_layout_in_advance_header_address" inherit_id="web.external_layout_clean">
+        <xpath expr="//div[@name='company_address']" position="replace">
+            <div class="row">
+                <p>test</p>
+                <div class="col-10">
+                    <div>
+                        <span t-field="company.street"/>
+                    </div>
+                    <div>
+                        <span t-field="company.street2"/>
+                    </div>
+                    <div>
+                        <span t-field="company.zip"/> <span t-field="company.city"/>
+                    </div>
+                    &#x2063;
+                    <div>
+                        Tel: <span t-field="company.phone"/>
+                    </div>
+                    <div>
+                        Fax: <span t-field="company.fax"/>
+                    </div>
+                    <div>
+                        <span t-field="company.email"/>
+                    </div>
+                </div>
+                <div class="col-6"></div>
+                <div class="col-6 text-left">
+                    <div>
+                        <span t-field="o.partner_id.name"/>
+                    </div>
+                    <div>
+                        <span t-field="o.partner_id.street"/>
+                    </div>
+                    <div>
+                        <span t-field="o.partner_id.denomination"/>
+                    </div>
+                    <div>
+                        <span t-field="o.partner_id.zip"/>/<span t-field="o.partner_id.city"/>
+                    </div>
+                    &#x2063;
+                    <div t-if="o.partner_id.vat" class="mt16">
+                        Tax ID: <span t-field="o.partner_id.vat"/>
+                    </div>
+                    &#x2063;
+                    <div>
+                        <span t-field="o.partner_id.invoicing_mails"/>
+                    </div>
+
+                </div>
+            </div>
+        </xpath>
+    </template>
+    <template id="external_layout_in_advance_header" inherit_id="web.external_layout_standard">
+        <xpath expr="//div[hasclass('zero_min_height')]" position="replace">
+        </xpath>
+        <xpath expr="//div[@name='company_address']" position="replace">
+            <div class="row">
+                <div class="col-10">
+                    <div>
+                        <span t-field="company.street"/>
+                    </div>
+                    <div>
+                        <span t-field="company.street2"/>
+                    </div>
+                    <div>
+                        <span t-field="company.zip"/> <span t-field="company.city"/>
+                    </div>
+                    &#x2063;
+                    <div>
+                        Tel: <span t-field="company.phone"/>
+                    </div>
+                    <div>
+                        Fax: <span t-field="company.fax"/>
+                    </div>
+                    <div>
+                        <span t-field="company.email"/>
+                    </div>
+                </div>
+                <div class="col-6"></div>
+                <div class="col-6 text-left">
+                    <div>
+                        <span t-field="o.partner_id.name"/>
+                    </div>
+                    <div>
+                        <span t-field="o.partner_id.street"/>
+                    </div>
+                    <div>
+                        <span t-field="o.partner_id.denomination"/>
+                    </div>
+                    <div>
+                        <span t-field="o.partner_id.zip"/>/<span t-field="o.partner_id.city"/>
+                    </div>
+                    &#x2063;
+                    <div t-if="o.partner_id.vat" class="mt16">
+                        Tax ID: <span t-field="o.partner_id.vat"/>
+                    </div>
+                    &#x2063;
+                    <div>
+                        <span t-field="o.partner_id.invoicing_mails"/>
+                    </div>
+
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

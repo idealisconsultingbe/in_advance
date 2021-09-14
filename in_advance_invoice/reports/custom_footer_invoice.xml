@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="external_layout_in_advance" inherit_id="web.external_layout_standard">
+        <xpath expr="//ul[hasclass('list-inline')]" position="replace">
+            <div class="row">
+                <div class="col-6"><h6><b>General building company</b></h6></div>
+                <div class="col-6"><h6><b>Algemene bouwonderneming</b></h6></div>
+            </div>
+            <div class="row">
+                <div class="col-4"><h6>BELFIUS BE90 5523 3104 0032</h6></div>
+                <div class="col-4"><h6>K.B.C BE72 7360 2958 9916</h6></div>
+                <div class="col-4"><h6>BNP PARIBAS BE04 2100 0789 3731</h6></div>
+            </div>
+            <div class="row">
+                <div class="col-4"><h6>GKCCBEBB</h6></div>
+                <div class="col-4"><h6>BIC KREDBEBB</h6></div>
+                <div class="col-4"><h6>GEBABEBB</h6></div>
+            </div>
+            <div class="row">
+                <div class="col-4"><h6>Enr. 03.11.12 Reg.</h6></div>
+                <div class="col-4"><h6>N° Entr. 0450.538.571</h6></div>
+                <div class="col-4"><h6>Agréation 25.112 Erkenning</h6></div>
+            </div>
+        </xpath>
+        <xpath expr="//div[hasclass('text-center')]" position="before">
+             <div class="row">
+                <div class="col-4"><h6>Sales condition on the back</h6></div>
+                <div class="col-4"><h6>Customer Accounting</h6></div>
+                <div class="col-4"><h6>Zie verkoopsvoorwaarden op keerzijde</h6></div>
+            </div>
+        </xpath>
+        <xpath expr="//div[hasclass('text-muted')]" position="replace">
+        </xpath>
+    </template>
+</odoo>

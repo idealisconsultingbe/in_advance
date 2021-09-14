@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- views Form -->
+        <record id="approval_request_in_advance_form_view" model="ir.ui.view">
+            <field name="inherit_id" ref="approvals.approval_request_view_form"/>
+            <field name="model">approval.request</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='request_status']" position="attributes">
+                    <attribute name="statusbar_visible">new,pending,approved</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_cancel']" position="attributes">
+                    <attribute name="attrs">
+                        {'invisible': [('category_id', '=', %(in_advance_invoice.approval_category_approve_invoice)d)]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_refuse']" position="attributes">
+                    <attribute name="attrs">
+                        {'invisible': [('category_id', '=', %(in_advance_invoice.approval_category_approve_invoice)d)]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='location']" position="after">
+                    <field name="account_move_id"/>
+                </xpath>
+                <xpath expr="//button[@name='action_draft']" position="attributes">
+                    <attribute name="attrs">
+                        {'invisible': ['|', ('request_status', '==', 'cancel'), '&amp;', ('user_status', '==', False),
+                        ('has_access_to_request', '==', False)]}
+                    </attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

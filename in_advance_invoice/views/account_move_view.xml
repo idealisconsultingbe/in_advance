@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- views Form -->
+        <record id="account_move_in_advance_form_view" model="ir.ui.view">
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="model">account.move</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='state']" position="replace">
+                     <field name="state" widget="statusbar" statusbar_visible="draft,pending_approval,approved,posted"/>
+<!--                    <attribute name="statusbar_visible">draft,pending_approval,approved,posted</attribute>-->
+                </xpath>
+                <xpath expr="//button[@name='action_post'][2]" position="attributes">
+                    <attribute name="attrs"> {
+                        'invisible': ['|', '|', ('state', '!=', 'approved'), ('auto_post', '=', True),
+                                      ('move_type', '=', 'entry')]}</attribute>
+                </xpath>
+
+                <xpath expr="//button[@name='action_post'][2]" position="after">
+                    <button name="action_state_pending_approval" string="Submit for approval" class="oe_highlight"
+                            type="object"
+                            attrs="{'invisible': ['|', '|', ('state', '!=', 'draft'), ('auto_post', '=', True), ('move_type', '=', 'entry')]}"/>
+                </xpath>
+                <xpath expr="//field[@name='payment_reference']" position="after">
+                    <field name="construction_site_concerned"
+                           attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt'))], 'readonly': [('state', '!=', 'draft')]}"/>
+                    <field name="introductory_sentence"
+                           attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt'))], 'readonly': [('state', '!=', 'draft')]}"/>
+                    <field name="account_number"
+                           attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt'))], 'readonly': [('state', '!=', 'draft')]}"/>
+                    <field name="imp_site"
+                           attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt'))], 'readonly': [('state', '!=', 'draft')]}"/>
+                    <field name="auto_liquidation"
+                           attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt'))], 'readonly': [('state', '!=', 'draft')]}"/>
+                    <field name="approval_request_id"/>
+                </xpath>
+                <xpath expr="//page[@id='invoice_tab']" position="after">
+                    <page id="id_amounts" string="Amounts">
+                        <group>
+                            <group>
+                                <field name="cumulative_amount"
+                                       attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt'))], 'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="previous_amount"
+                                       attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt'))], 'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="cumulative_statement"
+                                       attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt'))], 'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="previous_statement"
+                                       attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt'))], 'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="monthly_progress"/>
+                                <field name="cumulative_deduction_deposit"
+                                       attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt'))], 'readonly': [('state', '!=', 'draft')]}"/>
+                            </group>
+                            <group>
+                                <field name="previous_deduction_deposit"  attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt'))], 'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="net_amount"/>
+                                <field name="revision"
+                                       attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt'))], 'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="revision_amount_included"/>
+                                <field name="amount_deposit_deducted"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
