@@ -38,34 +38,22 @@ class AccountMove(models.Model):
     ], string='Status', required=True, readonly=True, copy=False, tracking=True,
         default='draft')
 
-    # state = fields.Selection(selection_add=[
-    #     ('pending_approval', 'Pending approval'),
-    #     ('approved', 'Approved'),
-    # ], ondelete={
-    #     'pending_approval': 'set default',
-    #     'approved': 'set default',
-    # })
-
     def in_amount_to_text(self, amount):
         return self.partner_id.currency_id.amount_to_text(amount)
 
     def action_state_pending_approval(self):
-        self.write({'state': 'pending_approval'})
-        self.approval_request_id.action_withdraw()
-
-    @api.model
-    def create(self, vals):
-        res = super(AccountMove, self).create(vals)
         category = self.env.ref('in_advance_invoice.approval_category_approve_invoice')
-        res.approval_request_id = self.env['approval.request'].create({
-            'name': 'Invoice validation',
-            'category_id': category.id,
-            'request_status': 'pending',
-            'date_start': fields.Datetime.now(),
-            'date_end': fields.Datetime.now(),
-        })
-        res.approval_request_id._onchange_category_id()
-        return res
+        if not self.approval_request_id:
+            self.approval_request_id = self.env['approval.request'].create({
+                'name': 'Invoice validation',
+                'category_id': category.id,
+                'request_status': 'pending',
+                'date_start': fields.Datetime.now(),
+                'date_end': fields.Datetime.now(),
+            })
+        self.approval_request_id._onchange_category_id()
+        self.write({'state': 'pending_approval'})
+        self.approval_request_id.action_confirm()
 
     def _compute_values(self):
         for amount in self:
